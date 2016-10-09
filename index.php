@@ -1,6 +1,6 @@
 <?php
-error_reporting(0);
-@ini_set('display_errors', 0);
+//error_reporting(0);
+//@ini_set('display_errors', 0);
 
 if(!isset($_GET['image_url']) || empty($_GET['image_url'])){
 exit("GET IMAGE URL IS EMPTY");
@@ -22,8 +22,8 @@ $nameok= uniqid().'-'.basename($URL);
 
 	$filesname= trim(preg_replace('/\.(jpe?g|png|gif|webp|wmp)(.*)/i', '', $ibasname)).'.jpg';
 
-		if(file_exists("cache_gambar/".$filesname)){
-			@unlink("cache_gambar/".$filesname);
+		if(file_exists($filesname)){
+			@unlink($filesname);
 		}
 preg_match('/([a-zA-Z0-9-_.]+)\/(.*)/i', $URL, $outdomain);
 
@@ -67,11 +67,11 @@ preg_match('/([a-zA-Z0-9-_.]+)\/(.*)/i', $URL, $outdomain);
 if(strlen($hasil) < 150){
 	return 'error';
 }	
-	$fff= fopen("cache_gambar/".$filesname,"w");
+	$fff= fopen($filesname,"w");
 	fwrite($fff, $hasil);
 	fclose($fff);
 
-return "cache_gambar/".$filesname;	 
+return $filesname;	 
 }
 
 
