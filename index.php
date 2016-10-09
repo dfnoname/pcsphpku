@@ -14,14 +14,6 @@ if(!isset($_GET['album_id']) || empty($_GET['album_id'])){
 exit("GET ALBUM_ID URL IS EMPTY");
 }
 
-if(!isset($_GET['access_token']) || empty($_GET['access_token'])){
-exit("GET ACCESS_TOKEN URL IS EMPTY");
-}
-
-if(!isset($_GET['refresh_token']) || empty($_GET['refresh_token'])){
-exit("GET REFRESH_TOKEN URL IS EMPTY");
-}
-
 
 
 function grab_image($URL){
