@@ -267,6 +267,8 @@ preg_match_all("~<content type='image/jpeg' src='\K.*(?=')~Uis", $RESULT_UPLOAD,
 $IMAGE_RESULT= preg_replace('/https?:\/\/lh(\d+).googleusercontent.com\//i', 'https://1.bp.blogspot.com/', $testarr[0][0]);
 
 $FULL_BLOGGER_IMG= preg_replace('/(https?:\/\/(.*)\/)/i', '\\1s1600/', $IMAGE_RESULT);
-@unlink($IMAGE_FILES);
+
 
 echo $FULL_BLOGGER_IMG;
+
+@unlink($IMAGE_FILES);
